@@ -5,16 +5,12 @@
 		 	$file = fopen($fileN, "r");
 			while(! feof($file)) {
 				$line = fgets($file);
-				$data = trim(trim($line, "["), "]");
-				$data1 = explode(";", $data);
+				$data1 = explode("   ", trim($line));
+				$subArray = array();
 				for ($i=0; $i < count($data1); $i++) {
-					$subArray = array();
-					$data2 = explode(",", $data1[$i]);
-					for ($j=0; $j < count($data2); $j++) {
-						array_push($subArray, $data2[$j]);
-					}
-					array_push($array, $subArray);
+					array_push($subArray, trim($data1[$i]));
 				}
+				array_push($array, $subArray);
 			}
 
 			fclose($file);
