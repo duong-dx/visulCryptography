@@ -10,7 +10,12 @@
 
     include_once('echoText.php');
     echoData($layer1, $layer2);
-
+    echo "<pre>";
+      print_r($layer1);
+    echo "<pre>";
+    echo "<pre>";
+      print_r($layer2);
+    echo "<pre>";
     writeFile($layer1, 'layer1.txt');
     writeFile($layer2, 'layer2.txt');
 

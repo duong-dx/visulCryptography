@@ -12,7 +12,6 @@
 				}
 				array_push($array, $subArray);
 			}
-
 			fclose($file);
 			return $array;
 		}

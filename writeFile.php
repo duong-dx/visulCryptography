@@ -4,13 +4,14 @@ if (!function_exists('writeFile')) {
 		$subTex = '';
 		for ($i=0; $i < count($array); $i++) { 
 			for ($j=0; $j < count($array[$i]) ; $j++) {
-					$subTex .= $array[$i][$j] . ',';
+				$value = $array[$i][$j];
+				$subTex .= ($value == "255") ? "1" . ',' : $value . ',';
 			}
 			$subTex = trim($subTex, ",") . ';';
 		}
 		$text ="[". trim($subTex, ";") ."]";
 		$file = fopen($fileName,"w");
-		echo fwrite($file, $text);
+		fwrite($file, $text);
 		fclose($file);
 	}
 }
